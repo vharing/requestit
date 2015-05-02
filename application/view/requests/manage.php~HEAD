@@ -1,0 +1,114 @@
+<!-- date_default_timezone_set("American/New York"); -->
+<div class="container">
+  <form><!-- method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> -->
+	<div class="row" id="heading">
+		<div class="u-full-width">
+			<h4 align="center">MANAGE REQUEST</h4>
+<!--<div class="row">
+<label for id="date">Date: </label>
+</div>-->
+			  <div class="row">
+			    <div class="six columns">
+					<label>Request #: </label>
+					<input class="u-full-width" type="text" id="staffID">
+					<!-- PHP code to import user/staff id or name -->
+				</div>
+				<div class="six columns">
+					<label>Requestor Name: </label>
+					<input class="u-full-width" type="text" id="requestID">
+					<!-- PHP code to import order/request id or requestor/patron's name -->
+				</div>
+			  </div>
+		</div>
+	</div>
+	
+	<!-- NOTIFICATION AREA -->
+	<div class="row" id="notify">
+		<h5>Notification</h5>
+		  <div class="row">
+			<div class="nine columns" id="itemOrdered">
+				<label for "resource1">Resource 1:</label>
+				<input  class="u-full-width" type="text" id="resource1">
+				<!-- PHP code to import resource requested -->
+			</div>
+			<div class="three columns" id="availability">
+			  <label for="available">Availability</label>
+				<select class="u-full-width">
+					<option>Availability</option>
+					<option>Available for Pick up</option>
+					<option>Not Available</option>
+					<option>Please Contact</option>
+				</select>
+			</div>
+		  </div>
+		  <div class="row">
+			<div class="nine columns" id="itemOrdered">
+				<label for "resource2">Resource 2:</label>
+				<input  class="u-full-width" type="text" id="resource1">
+				<!-- PHP code to import resource requested -->
+			</div>
+			<div class="three columns" id="availability">
+			  <label for="available">Availability</label>
+				<select class="u-full-width">
+					<option>Availability</option>
+					<option>Available for Pick up</option>
+					<option>Not Available</option>
+					<option>Please Contact</option>
+				</select>
+			</div>
+		  </div>
+		  <div class="row">
+			<div class="nine columns" id="itemOrdered">
+				<label for "resource3">Resource 3:</label>
+				<input  class="u-full-width" type="text" id="resource3">
+				<!-- PHP code to import resource requested -->
+			</div>
+			<div class="three columns" id="availability">
+			  <label for="available">Availability</label>
+				<select class="u-full-width">
+					<option>Availability</option>
+					<option>Available for Pick up</option>
+					<option>Not Available</option>
+					<option>Please Contact</option>
+				</select>
+			</div>
+		  </div>
+		  <br>
+		<div>
+		  <a class="button button-primary" href="#">Notify</a>
+		  <!-- Displays an alert box with radio buttons to send either an 
+		  email or a letter to the requestor and then generates that email or letter -->
+		</div>
+	</div>
+
+	<!-- ORDER STATUS AREA -->
+
+	<div class="row" id="status">
+		<h5>Update Status</h5>
+		<div class="four columns">
+		</div>
+		<div class="eight columns" id="selectStatus">
+			<select>
+				<option>Select status</option>
+				<option>Open</option>
+				<option>Pending</option>
+				<option>Closed</option>
+			</select>
+			<br><br>
+			<label for="addInfo">Additional Information</label>
+			<textarea id="addInfo" max-length="255" cols="50" rows="5"></textarea>
+		</div>
+	</div>
+	
+	<div class="row" id="buttons">
+		<div class="u-full-width">
+			<input class="button-primary" value="Save" type="submit">
+			<!-- Saves the file to a database. Alert box asking "Do you want to see another request? If yes, user/staff can enter a name or a request number" -->
+			<button class="button-primary" type="reset">Undo Changes</button>
+			<!-- PHP code to reset form. Alert box asking "Are you sure?" -->
+			<a class="button button-primary" href="#">Print Request</a>
+			<!-- PHP code to print request form -->
+		</div>
+	</div>
+  </form>
+</div> 
