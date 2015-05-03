@@ -251,6 +251,44 @@ class Requests extends Controller
         'status' => $_POST['$materials->status']
         );
 */
+
+
+        
+
+                
+        
+                //echo "<pre>";
+                //var_dump($_POST['sendEmail']);
+
+                //echo "</pre>";
+
+                    if(isset($this->$_POST ['sendEmail'])) {
+
+                        $this->mail = new PHPMailer;
+
+                        $toName = $data['first_name'] .$data['last_name'];
+                        //$toName = "Valerie";
+                        $body = "This is your confirmation email for the materials you requested.";
+                        $toAddress = "valerie.haring@gmail.com"; 
+                        $subject = "Notification Received";
+                        
+                                if(!$this->mail->Send()) {
+                                echo "Message could not be sent. <p>";
+                                echo "Mailer Error: " . $this->mail->ErrorInfo;
+                                exit;
+                            }       
+                    $email->send($toAddress,$toName,$subject,$body);
+                    $this->mail->Send();
+                    
+
+                    }
+
+                       
+
+
+
+
+
        $requests->update('requests', $data, "id=$id");
        $materials->update('materials', $data, "id=$id");
        
